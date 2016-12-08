@@ -1,25 +1,26 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
-
+  - $HOME/.npm
+  - $HOME/.cache
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - node_modules/phantomjs-prebuilt/bin/phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- node_modules/phantomjs-prebuilt/bin/phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: L0yJ2xVvyuArlNjV34GnjJ3zd5No7Ba9W79eisTC8UmUyAks6NRu9JHqQV2z+69Jxc1IO+ujF47MlFzLCpw4bIP9XPIhrRFqrRpBIlS0zybcfH2Ec0hgUfcrfAbkpL86wYNLpMTKvU84nqaqh3KLgL+ujpA8CMpr0T3SLYedkcj+ahvgeJ2pogO72abaz8qcHvNX66Hc3gsoWZM3g0dgz0Hf6VhxUmwQOHz58rrqQFVtrHQa1EfoKlCR0R/0EleW98OwBJZ5DznQXdEgDtiqxcS8wBEY8WTYjhN1T/KzNb7uk1DT/cus5rlRQny6PdstReC/byWK+VCbMToaEigt8rZt+WQ11RELd8KdkAzR59aBiC3yGsMnTksm+wPmnvGr43gO1zjnMiy7Q4c1TdP+7J4/81h4DHNtmet+u6dSc07OxYK9qpT+Kv03ubzTXcqjdbtgIOeuHo/0fFoPqnmZjrslSUcSYTJhZxcaFJwbJPAdZzd79/KfkWpvnPivdvOClSRbd5od2sNNJSfcbh9rR+HfooLIgererApyjlGFlkgrLIvP1RxzVGb4n69oKepJdyENIeyXco2rmgsViwyI/ZAd3wDYZ5zSZ+0Y9r+HRY+pVYkmsvp+/of1UCefFKl6ILkYz1p6kbeWvg0dlB68Y47yLJlj+nUe++t0KZIlP8Q=
+  app: radiant-mountain-38888
+  on:
+    repo: FilmKnurd/fem-ember-commently
