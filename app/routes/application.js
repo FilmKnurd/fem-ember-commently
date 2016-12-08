@@ -1,13 +1,13 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-import { default as math, PI } from 'math';
+// import { default as math, PI } from 'math';
 
 const { Route, inject } = Ember;
 
 export default Route.extend(ApplicationRouteMixin, {
   beforeModel() {
-      console.log(math.sqrt(4));
-      console.log(PI);
+    //   console.log(math.sqrt(4));
+    //   console.log(PI);
   },
   setupController(controller) {
     this._super(...arguments);

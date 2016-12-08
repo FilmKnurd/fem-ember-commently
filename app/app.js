@@ -1,3 +1,5 @@
+/* global define:true */
+
 define('math', [], () => {
   return {
     default: Math,
