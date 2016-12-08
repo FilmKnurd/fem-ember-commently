@@ -4,14 +4,19 @@ export function initialize(app) {
   let geo = navigator.geolocation;
 
   app.deferReadiness();
-  geo.getCurrentPosition(pos => {
-    let pt = pos.coords;
+  if (geo) {
+    geo.getCurrentPosition(pos => {
+      let pt = pos.coords;
 
-    // console.log(pt.longitude, pt.latitude);
-    app.register('data:location', pt, { instantiate: false });
+      // console.log(pt.longitude, pt.latitude);
+      app.register('data:location', pt, { instantiate: false });
 
+      app.advanceReadiness();
+    });
+  } else {
     app.advanceReadiness();
-  });
+  }
+  
 }
 
 export default {
