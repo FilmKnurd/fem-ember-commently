@@ -1,7 +1,8 @@
 <nav class="navbar">
+  {{pos.longitude}}, {{pos.latitude}}
   {{link-to 'Comment.ly' 'posts.index' classNames='brand'}}
 
-  
+
     <div class="pull-right">
       {{#unless (is-authenticated)}}
         {{link-to 'Login' 'auth.login' class='btn'}}
