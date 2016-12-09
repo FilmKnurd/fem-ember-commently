@@ -1,0 +1,9 @@
+{
+  "name": "cat-helper",
+  "keywords": [
+    "ember-addon"
+  ],
+  "devDependencies": {
+    "ember-cli-normalize-entity-name": "^1.0.0"
+  }
+}
