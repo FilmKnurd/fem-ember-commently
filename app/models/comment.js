@@ -3,6 +3,7 @@ import DS from 'ember-data';
 const { Model, attr, belongsTo } = DS;
 
 export default Model.extend({
+    author: belongsTo('user'),
     post: belongsTo('post'),
     body: attr('string'),
     createdAt: attr('string'),

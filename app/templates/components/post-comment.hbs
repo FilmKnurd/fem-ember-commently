@@ -1,10 +1,19 @@
-<p class='comment-body'>
-  {{model.body}}
-</p>
+{{#unless isEditing}}
+  <p class='comment-body'>
+      {{model.body}}
+  </p>
 
-<span class="delete-indicator"
-      onClick={{this.attrs.delete-comment}}>
-</span>
+  <span class="delete-indicator"
+        onClick={{this.attrs.delete-comment}}>
+  </span>
+
+  <span class="edit-indicator"
+        onClick={{toggle "isEditing" this}}>
+  </span>
+{{else}}
+  {{x-textarea value=model.body class='reply-field' disabled=(not saveComment.isIdle)}}
+  <button onClick={{perform saveComment model}} disabled={{not saveComment.isIdle}}>Save</button>
+{{/unless}}
 
 {{#if model.updatedAt}}
   <span class="posted-at">

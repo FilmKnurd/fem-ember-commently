@@ -7,6 +7,15 @@ export default Ember.Controller.extend({
     search: '',
 
     actions: {
+        // postComment(post, body) {
+        //     let author = this.get('currentUser');
+        //     let comment = this.store.createRecord({ author, post, body });
+
+        //     comment.save().then(() => {
+        //         this.set('draft.comment', '');
+        //     });
+        // },
+
         updateSearch(value) {
             console.log(value);
             this.set('search', value ? value : '');
