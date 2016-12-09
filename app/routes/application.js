@@ -15,6 +15,7 @@ export default Route.extend(ApplicationRouteMixin, {
     let instance = Ember.getOwner(this);
 
     controller.set('pos', instance.lookup('data:location'));
+    controller.set('ua', instance.lookup('data:request').userAgent);
   },
 
     session: inject.service(),
