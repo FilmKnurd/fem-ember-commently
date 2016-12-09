@@ -52,6 +52,7 @@ body {
 .posts-left .posts-left-content-pane {}
 
 .posts-left .posts-left-search input {
+    color: black;
     font-size: 1.3rem;
     width: 100%;
     border-radius: 5px;
@@ -352,4 +353,8 @@ nav.navbar .brand {
 
 hr {
     border-bottom: none;
+}
+
+input[type="searc"] {
+    color: black;
 }
